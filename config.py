@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
 # На Streamlit Cloud ключи из раздела Secrets попадают в переменные окружения
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "").strip().strip("\"'")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://openrouter.ai/api/v1")
 
 # Бесплатные модели OpenRouter. Их иногда перегружают (ошибка 429),
